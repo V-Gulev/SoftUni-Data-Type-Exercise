@@ -2,25 +2,17 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int number = Integer.parseInt(sc.nextLine());
-        double sum = 0.0;
-        int iValue;
-        for (int i = 1; i <= number; i++) {
-            iValue=i;
-            if (i >= 10) {
-                while ( i != 0) {
-                    int digit = i % 10;
-                    sum += digit;
-                    i /= 10;
-                }
-            } else sum += i;
-            i= iValue;
-            if (sum == 5 || sum == 7 || sum == 11) {
-                System.out.println(i + " -> " + "True");
-            } else System.out.println(i + " -> " + "False");
-            sum=0;
-        }
+        Scanner scanner = new Scanner(System.in);
+        double length, width, height, v;
+        System.out.print("Length: ");
+        length = Double.parseDouble(scanner.nextLine());
+        System.out.print("Width: ");
+        width = Double.parseDouble(scanner.nextLine());
+        System.out.print("Height: ");
+        height = Double.parseDouble(scanner.nextLine());
+        v = (length * width * height) / 3;
+        System.out.printf("Pyramid Volume: %.2f", v);
+
 
     }
 }
