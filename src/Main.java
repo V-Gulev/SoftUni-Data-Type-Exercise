@@ -1,12 +1,11 @@
-import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String townName = sc.nextLine();
-        BigDecimal population = new BigDecimal(sc.nextLine());
-        BigDecimal area = new BigDecimal(sc.nextLine());
-        System.out.printf("Town %s has population of %s and area %s square km.", townName, population, area);
+        String name1 = sc.nextLine();
+        String name2 = sc.nextLine();
+        String symbol = sc.nextLine();
+        System.out.println(name1+symbol+name2);
     }
 }
