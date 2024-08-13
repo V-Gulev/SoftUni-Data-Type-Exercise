@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         double n = Double.parseDouble(sc.nextLine());
-        double km =(n/1000);
-        System.out.printf("%.2f",km);
+        double dollar =n*1.36;
+        System.out.printf("%.3f",dollar);
     }
 }
