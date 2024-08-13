@@ -4,12 +4,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        double times = Double.parseDouble(sc.nextLine());
-        BigDecimal sum = BigDecimal.ZERO;
-        for (int i = 0; i <times ; i++) {
-            BigDecimal n = sc.nextBigDecimal();
-            sum=sum.add(n);
-        }
-        System.out.println(sum);
+        String townName = sc.nextLine();
+        BigDecimal population = new BigDecimal(sc.nextLine());
+        BigDecimal area = new BigDecimal(sc.nextLine());
+        System.out.printf("Town %s has population of %s and area %s square km.", townName, population, area);
     }
 }
