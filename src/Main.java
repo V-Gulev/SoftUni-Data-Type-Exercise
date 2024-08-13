@@ -6,6 +6,7 @@ public class Main {
         String a = sc.nextLine();
         String b = sc.nextLine();
         String c = sc.nextLine();
-        System.out.println(a+b+c);
+        String reversed = c+" "+b+" "+a;
+        System.out.println(reversed);
     }
 }
