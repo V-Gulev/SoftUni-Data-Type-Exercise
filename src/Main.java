@@ -3,16 +3,23 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        double length, width, height, v;
-        System.out.print("Length: ");
-        length = Double.parseDouble(scanner.nextLine());
-        System.out.print("Width: ");
-        width = Double.parseDouble(scanner.nextLine());
-        System.out.print("Height: ");
-        height = Double.parseDouble(scanner.nextLine());
-        v = (length * width * height) / 3;
-        System.out.printf("Pyramid Volume: %.2f", v);
-
+        int checkStop = Integer.parseInt(scanner.nextLine());
+        int sum = 0;
+        int valueOfI ;
+        boolean ifSpecial;
+        for (int i = 1; i <= checkStop; i++) {
+            valueOfI = i;
+            while (i > 0) {
+                sum += i % 10;
+                i = i / 10;
+            }
+            ifSpecial = (sum == 5) || (sum == 7) || (sum == 11);
+            if (!ifSpecial){
+                System.out.printf("%d -> False%n", valueOfI);
+            }else System.out.printf("%d -> True%n", valueOfI);
+            sum = 0;
+            i = valueOfI;
+        }
 
     }
 }
