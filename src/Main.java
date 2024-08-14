@@ -1,28 +1,22 @@
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int starting = Integer.parseInt(scanner.nextLine());
-
-        int total = 0;
-        int days = 0;
-
-        while (starting >= 100) {
-            total += starting;
-            starting -= 10;
-            days++;
-            total -= 26;
+        int power = Integer.parseInt(scanner.nextLine());
+        int distance = Integer.parseInt(scanner.nextLine());
+        int exhaustionFactor = Integer.parseInt(scanner.nextLine());
+        int pokedCounter = 0;
+        int originalValueOfPower = power;
+        while (power >= distance) {
+            power -= distance;
+            pokedCounter++;
+            if (power == (double) originalValueOfPower / 2 && exhaustionFactor != 0) {
+                power/=  exhaustionFactor;
+            }
         }
-
-        if (total >= 26) {
-            total -= 26;
-        }
-
-        System.out.println(days);
-        System.out.println(total);
-
-
+        System.out.println(power);
+        System.out.println(pokedCounter);
     }
 }
-
