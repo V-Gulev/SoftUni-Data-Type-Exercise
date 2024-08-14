@@ -1,27 +1,48 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class Main {
-    public static double[] arrayFromInput(String s) {
-
-        String[] items = s.split(" ");
-        double[] numbers = new double[items.length];
-
-        for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = Double.parseDouble(items[i]);
-        }
-        return numbers;
-    }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int key = Integer.parseInt(scanner.nextLine());
-        int times = Integer.parseInt(scanner.nextLine());
-
-        for (int i = 0; i <times ; i++) {
-            char ch = scanner.nextLine().charAt(0);
-            char decrypted = (char) (ch+key);
-            System.out.print(decrypted);
-        }
+        int number =Integer.parseInt(scanner.nextLine());
+        BracketsChecker(number, scanner);
 
     }
+
+    public static boolean BracketsChecker(int numbers,Scanner scanner) {
+
+        int openingBracketsCounter = 0;
+        int closedBracketCounter = 0;
+        boolean isBalanced = true;
+        for (int i = 0; i < numbers; i++) {
+            String input = scanner.nextLine();
+            if (input.equals("(")) {
+                openingBracketsCounter++;
+                if (openingBracketsCounter - closedBracketCounter >= 2) {
+                    isBalanced = false;
+                    break;
+                }
+
+            } else if (input.equals(")")) {
+                closedBracketCounter++;
+                if (closedBracketCounter > openingBracketsCounter) {
+                    isBalanced = false;
+                    break;
+                }
+            }
+        }
+        if (closedBracketCounter != openingBracketsCounter) {
+            isBalanced = false;
+        }
+        ResultToPrintCheck(isBalanced);
+        return isBalanced;
+    }
+
+    public static void ResultToPrintCheck(boolean isBalanced) {
+        if (isBalanced) {
+            System.out.println("BALANCED");
+        } else System.out.println("UNBALANCED");
+    }
+
+
 }
