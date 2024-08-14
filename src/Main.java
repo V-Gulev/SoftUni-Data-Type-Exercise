@@ -1,59 +1,32 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class Main {
-    public static double[] arrayFromInput(String s) {
 
-        String[] items = s.split(" ");
-        double[] numbers = new double[items.length];
 
-        for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = Double.parseDouble(items[i]);
-        }
-        return numbers;
-    }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        int numbers = Integer.parseInt(scanner.nextLine());
+        for (int i = 0; i < numbers ; i++) {
+            double num1 = Double.parseDouble(scanner.next());
+            double num2 = Double.parseDouble(scanner.next());
+            int sum = 0;
 
-        while (true) {
-            String input = scanner.nextLine();
-            if (input.equals("END")) {
-                break;
+
+            if (num1 > num2) {
+                double biggerNum = Math.abs(num1);
+                while (biggerNum > 0) {
+                    sum += (int) (biggerNum % 10);
+                    biggerNum /= 10;
+                }
+            }else {
+                double biggerNum = Math.abs(num2);
+                while (biggerNum > 0) {
+                    sum += (int) (biggerNum % 10);
+                    biggerNum /= 10;
+                }
             }
-            if (Main.isInt(input)) {
-                System.out.printf("%s is integer type%n", input);
-            } else if (Main.isDouble(input)) {
-                System.out.printf("%s is floating point type%n", input);
-            } else if (input.length() < 2) {
-                System.out.printf("%s is character type%n", input);
-            } else if (Main.isBoolean(input)) {
-                System.out.printf("%s is boolean type%n", input);
-            } else System.out.printf("%s is string type%n", input);
+            System.out.println(sum);
         }
     }
-
-    static boolean isBoolean(String s) {
-        return s.equalsIgnoreCase("true") || s.equalsIgnoreCase("false");
-    }
-
-
-    static boolean isDouble(String s) {
-        try {
-            double i = Double.parseDouble(s);
-            return true;
-        } catch (NumberFormatException er) {
-            return false;
-        }
-    }
-
-    static boolean isInt(String s) {
-        try {
-            int i = Integer.parseInt(s);
-            return true;
-        } catch (NumberFormatException er) {
-            return false;
-        }
-    }
-
 }
-
