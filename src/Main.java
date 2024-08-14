@@ -14,17 +14,13 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        int key = Integer.parseInt(scanner.nextLine());
+        int times = Integer.parseInt(scanner.nextLine());
 
-        int checkTill = Integer.parseInt(scanner.nextLine());
-        for (int i = 2; i <= checkTill; i++) {
-            boolean isPrime = true;
-            for (int j = 2; j < i; j++) {
-                if (i % j == 0) {
-                    isPrime = false;
-                    break;
-                }
-            }
-            System.out.printf("%d -> %b%n", i, isPrime);
+        for (int i = 0; i <times ; i++) {
+            char ch = scanner.nextLine().charAt(0);
+            char decrypted = (char) (ch+key);
+            System.out.print(decrypted);
         }
 
     }
