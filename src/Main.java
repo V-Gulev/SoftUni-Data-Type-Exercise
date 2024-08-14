@@ -3,10 +3,13 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int people = Integer.parseInt(scanner.nextLine());
-        int capacity = Integer.parseInt(scanner.nextLine());
-        int courses = (int) Math.ceil((double) people /capacity);
-        System.out.println(courses);
+        int letters = Integer.parseInt(scanner.nextLine());
+        int sum = 0;
+        for (int i = 0; i < letters; i++) {
+            char letter = scanner.next().charAt(0);
+            sum += letter;
+        }
+        System.out.println("The sum equals: "+sum);
     }
 }
 
