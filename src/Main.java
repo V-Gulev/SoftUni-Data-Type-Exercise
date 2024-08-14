@@ -1,32 +1,24 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
+    public static double[] arrayFromInput(String s) {
 
+        String[] items = s.split(" ");
+        double[] numbers = new double[items.length];
 
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = Double.parseDouble(items[i]);
+        }
+        return numbers;
+    }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int numbers = Integer.parseInt(scanner.nextLine());
-        for (int i = 0; i < numbers ; i++) {
-            double num1 = Double.parseDouble(scanner.next());
-            double num2 = Double.parseDouble(scanner.next());
-            int sum = 0;
+        double a = scanner.nextDouble();
+        double b = scanner.nextDouble();
 
-
-            if (num1 > num2) {
-                double biggerNum = Math.abs(num1);
-                while (biggerNum > 0) {
-                    sum += (int) (biggerNum % 10);
-                    biggerNum /= 10;
-                }
-            }else {
-                double biggerNum = Math.abs(num2);
-                while (biggerNum > 0) {
-                    sum += (int) (biggerNum % 10);
-                    biggerNum /= 10;
-                }
-            }
-            System.out.println(sum);
-        }
+        if (Math.abs(a-b)<0.000001){
+            System.out.println("True");
+        }else System.out.println("False");
     }
 }
