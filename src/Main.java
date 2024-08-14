@@ -3,13 +3,13 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int letters = Integer.parseInt(scanner.nextLine());
-        int sum = 0;
-        for (int i = 0; i < letters; i++) {
-            char letter = scanner.next().charAt(0);
-            sum += letter;
+        int start = Integer.parseInt(scanner.nextLine());
+        int end = Integer.parseInt(scanner.nextLine());
+        for (int i = start; i <= end; i++) {
+            System.out.print((char) i + " ");
         }
-        System.out.println("The sum equals: "+sum);
+
+
     }
 }
 
