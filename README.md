@@ -1,1 +1,1 @@
-Data Type Exercises
+SoftUni Data Type Exercises
